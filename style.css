@@ -1,0 +1,27 @@
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+#timer {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+span {
+    color: #ff4757; /* Un color vibrant per als números */
+}
+
+#video-container {
+    max-width: 800px;
+    width: 90%;
+}
