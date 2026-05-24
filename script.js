@@ -1,5 +1,5 @@
 // Configura la data final (1 mes vista)
-const targetDate = new Date("June 4, 2026 00:00:00").getTime();
+const targetDate = new Date("June 7, 2026 18:00:00").getTime();
 
 const countdown = setInterval(() => {
     const now = new Date().getTime();
