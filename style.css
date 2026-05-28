@@ -8,8 +8,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-family: 'Times New Roman', Times, serif; /* Estil elegant que lliga amb el 50è aniversari */
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
     background-position: center center;
     background-repeat: no-repeat;
@@ -18,15 +17,19 @@ body {
     transition: background-image 0.3s ease-in-out;
 }
 
-
+/* --- RESPONSIVE FONS (Mòbil per defecte) --- */
 @media (max-width: 768px) {
     body {
-        background-image: url('fons-web-mobil.png');
+        background-image: url('fons-web-mobil.jpg');
     }
     
+    #countdown-container {
+        /* AQUEST ÉS EL VALOR QUE MOUS PER AL MÒBIL */
+        top: 72%; 
+    }
+
     #timer {
-        margin-top: 110px; /* Ajusta la posició vertical al mòbil */
-        gap: 15px;
+        gap: 10px;
     }
     
     #timer .time-block span {
@@ -34,20 +37,27 @@ body {
     }
 }
 
-
+/* --- RESPONSIVE FONS (Ordinador i tauletes grans) --- */
 @media (min-width: 769px) {
     body {
-        background-image: url('fons-web-ordinador.png');
+        background-image: url('fons-web-ordinador.jpg');
     }
     
+    #countdown-container {
+        /* AQUEST ÉS EL VALOR QUE MOUS PER A L'ORDINADOR */
+        top: 68%; 
+    }
+
     #timer {
-        margin-top: 130px; /* Ajusta la posició vertical a l'ordinador perquè quedi sota el text */
         gap: 30px;
     }
 }
 
-
+/* --- DISSENY DEL COMPTADOR --- */
 #countdown-container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     max-width: 600px;
     padding: 20px;
@@ -59,8 +69,8 @@ body {
 }
 
 #timer .time-block {
-    background: rgba(255, 255, 255, 0.15); /* Un fons molt suau translúcid per assegurar la lectura */
-    backdrop-filter: blur(5px); /* Efecte vidre esmerilat modern */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(5px); 
     padding: 15px;
     border-radius: 8px;
     min-width: 75px;
@@ -70,14 +80,34 @@ body {
 #timer .time-block span {
     font-size: 3rem;
     font-weight: bold;
-    color: #1a1a1a; /* Color fosc elegant, com el text de la imatge */
+    color: #1a1a1a; 
     display: block;
 }
 
 #timer .time-block p {
     font-size: 0.8rem;
     text-transform: uppercase;
-    color: #8c7355; /* Color daurat/corporatiu suau per a les etiquetes */
+    color: #8c7355; 
     margin-top: 5px;
     letter-spacing: 1px;
+}
+
+/* --- CONTENIDOR DEL VÍDEO --- */
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#myVideo {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 90vh;
 }
