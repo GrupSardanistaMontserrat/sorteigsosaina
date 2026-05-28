@@ -1,22 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: #1a1a1a;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: 'Times New Roman', Times, serif; /* Estil elegant que lliga amb el 50è aniversari */
     text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background-image 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('fons web mobil.jpg');
+    }
+    
+    #timer {
+        margin-top: 110px; /* Ajusta la posició vertical al mòbil */
+        gap: 15px;
+    }
+    
+    #timer .time-block span {
+        font-size: 2rem !important;
+    }
+}
+
+
+@media (min-width: 769px) {
+    body {
+        background-image: url('fons web ordinador.jpg');
+    }
+    
+    #timer {
+        margin-top: 130px; /* Ajusta la posició vertical a l'ordinador perquè quedi sota el text */
+        gap: 30px;
+    }
+}
+
+
+#countdown-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
 }
 
 #timer {
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-span {
-    color: #ff4757; /* Un color vibrant per als números */
+#timer .time-block {
+    background: rgba(255, 255, 255, 0.15); /* Un fons molt suau translúcid per assegurar la lectura */
+    backdrop-filter: blur(5px); /* Efecte vidre esmerilat modern */
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 75px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#timer .time-block span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1a1a1a; /* Color fosc elegant, com el text de la imatge */
+    display: block;
+}
+
+#timer .time-block p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #8c7355; /* Color daurat/corporatiu suau per a les etiquetes */
+    margin-top: 5px;
+    letter-spacing: 1px;
 }
