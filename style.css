@@ -20,8 +20,3 @@ body {
 span {
     color: #ff4757; /* Un color vibrant per als números */
 }
-
-#video-container {
-    max-width: 800px;
-    width: 90%;
-}
