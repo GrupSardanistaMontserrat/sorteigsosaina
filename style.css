@@ -21,7 +21,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background-image: url('fons web mobil.jpg');
+        background-image: url('fons-web-mobil.png');
     }
     
     #timer {
@@ -37,7 +37,7 @@ body {
 
 @media (min-width: 769px) {
     body {
-        background-image: url('fons web ordinador.jpg');
+        background-image: url('fons-web-ordinador.png');
     }
     
     #timer {
