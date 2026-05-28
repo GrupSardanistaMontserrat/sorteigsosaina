@@ -20,7 +20,7 @@ body {
 /* --- RESPONSIVE FONS (Mòbil per defecte) --- */
 @media (max-width: 768px) {
     body {
-        background-image: url('fons-web-mobil.jpg');
+        background-image: url('fons-web-mobil.png');
     }
     
     #countdown-container {
@@ -40,7 +40,7 @@ body {
 /* --- RESPONSIVE FONS (Ordinador i tauletes grans) --- */
 @media (min-width: 769px) {
     body {
-        background-image: url('fons-web-ordinador.jpg');
+        background-image: url('fons-web-ordinador.png');
     }
     
     #countdown-container {
