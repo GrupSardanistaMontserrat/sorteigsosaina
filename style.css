@@ -25,7 +25,7 @@ body {
     
     #countdown-container {
         /* AQUEST ÉS EL VALOR QUE MOUS PER AL MÒBIL */
-        top: 72%; 
+        top: 82%; 
     }
 
     #timer {
@@ -45,7 +45,7 @@ body {
     
     #countdown-container {
         /* AQUEST ÉS EL VALOR QUE MOUS PER A L'ORDINADOR */
-        top: 68%; 
+        top: 78%; 
     }
 
     #timer {
