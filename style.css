@@ -8,154 +8,113 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+    font-family: 'Playfair Display', serif; 
     text-align: center;
-    background-position: center center;
-    background-repeat: no-repeat;
+    color: #1a1a1a; 
+    background-color: #e3decb; 
+    overflow-x: hidden;
+}
+
+#background-layer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-image: url('fons-net.jpg'); 
     background-size: cover;
-    background-attachment: fixed;
-    transition: background-image 0.3s ease-in-out;
+    background-position: center;
+    z-index: -1;
 }
 
-/* --- DISSENY BASE DEL COMPTADOR --- */
-#countdown-container {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 600px;
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 1600px; /* Ampliat dràsticament per permetre créixer */
     padding: 20px;
+    z-index: 1;
 }
 
+/* --- LOGO --- */
+#logo-sosaina {
+    width: clamp(200px, 20vw, 350px); /* Que creixi de forma natural amb la pantalla */
+    max-width: 80%;
+    margin-bottom: 30px; 
+}
+
+/* --- TEXTOS --- */
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem); 
+    font-weight: 500; /* Una mica més gruixut que abans */
+    letter-spacing: 0.5px;
+    margin-bottom: 5px; 
+}
+
+h1 {
+    font-size: clamp(3.5rem, 8vw, 7.5rem); 
+    font-weight: 600; /* Força més negreta */
+    color: #bfa054; /* Un pèl més clar per imitar el reflex de la llum */
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    
+    /* EL TRUC: Estirem la lletra horitzontalment un 15% */
+    transform: scaleX(1.15); 
+    display: inline-block; /* Obligatori perquè el transform funcioni en textos */
+    
+    /* Ombra doble per simular l'efecte 3D / relleu metàl·lic */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2), -1px -1px 2px rgba(255,255,255,0.4); 
+}
+
+.subtitle {
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-weight: 400; /* Aquest el mantenim normal */
+    margin-bottom: 40px; 
+}
+
+.footer-text {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 500; /* Una mica de força */
+    margin-top: 40px;
+    color: #bfa054; 
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+
+/* --- COMPTADOR --- */
 #timer {
     display: flex;
     justify-content: center;
+    gap: clamp(15px, 4vw, 40px); /* Més separació si hi ha espai */
+    margin: 10px 0;
 }
 
 #timer .time-block {
     background: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(5px); 
-    border-radius: 8px;
+    padding: clamp(15px, 3vw, 35px) clamp(15px, 3vw, 30px); /* Capses amb més presència */
+    border-radius: 12px;
+    min-width: clamp(80px, 12vw, 150px); /* Permetem que les capses siguin amples */
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 #timer .time-block span {
     font-weight: bold;
-    color: #1a1a1a; 
+    font-size: clamp(3rem, 7vw, 6rem); /* Números imponents */
     display: block;
+    line-height: 1; 
 }
 
 #timer .time-block p {
-    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: clamp(0.75rem, 1.5vw, 1rem); /* Text de sota en proporció */
     text-transform: uppercase;
-    color: #8c7355; 
-    margin-top: 5px;
-    letter-spacing: 1px;
+    color: #a98b4f; 
+    margin-top: 15px;
+    letter-spacing: 2px;
 }
 
-/* =========================================================
-   MEDIA QUERIES (Control al mil·límetre)
-============================================================ */
-
-/* --- 1. MÒBIL PETIT (Fins a 480px) --- */
-@media (max-width: 440px) {
-    body { background-image: url('fons-web-mobil.png'); }
-    #countdown-container { 
-        top: 69%; /* <-- Ajusta això per a mòbils petits */
-    }
-    #timer { gap: 10px; }
-    #timer .time-block { padding: 10px; min-width: 60px; }
-    #timer .time-block span { font-size: 0.8rem; }
-}
-
-@media (min-width: 441px) and (max-width: 550px) {
-    body { background-image: url('fons-web-mobil.png'); }
-    #countdown-container { 
-        top: 70%; /* <-- Ajusta això per a mòbils grans */
-    }
-    #timer { gap: 15px; }
-    #timer .time-block { padding: 10px; min-width: 60px; }
-    #timer .time-block span { font-size: 0.8rem; }
-}
-
-@media (min-width: 551px) and (max-width: 650px) {
-    body { background-image: url('fons-web-mobil.png'); }
-    #countdown-container { 
-        top: 74%; /* <-- Ajusta això per a mòbils grans */
-    }
-    #timer { gap: 15px; }
-    #timer .time-block { padding: 12px; min-width: 70px; }
-    #timer .time-block span { font-size: 1.3rem; }
-}
-
-@media (min-width: 651px) and (max-width: 700px) {
-    body { background-image: url('fons-web-mobil.png'); }
-    #countdown-container { 
-        top: 77%; /* <-- Ajusta això per a mòbils grans */
-    }
-    #timer { gap: 15px; }
-    #timer .time-block { padding: 12px; min-width: 70px; }
-    #timer .time-block span { font-size: 1.6rem; }
-}
-
-/* --- 2. MÒBIL GRAN (De 481px a 768px) --- */
-@media (min-width: 701px) and (max-width: 768px) {
-    body { background-image: url('fons-web-mobil.png'); }
-    #countdown-container { 
-        top: 79%; /* <-- Ajusta això per a mòbils grans */
-    }
-    #timer { gap: 15px; }
-    #timer .time-block { padding: 12px; min-width: 70px; }
-    #timer .time-block span { font-size: 1.8rem; }
-}
-
-/* --- 3. TAULETES I ORDINADORS PETITS (De 769px a 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    body { background-image: url('fons-web-ordinador.png'); }
-    #countdown-container { 
-        top: 74%; /* <-- Ajusta això per a iPads o portàtils petits */
-    }
-    #timer { gap: 20px; }
-    #timer .time-block { padding: 15px; min-width: 75px; }
-    #timer .time-block span { font-size: 2.5rem; }
-}
-
-/* --- 4. ORDINADORS ESTÀNDARD (De 1025px a 1440px) --- */
-@media (min-width: 1025px) and (max-width: 1600px) {
-    body { background-image: url('fons-web-ordinador.png'); }
-    #countdown-container { 
-        top: 74%; /* <-- Ajusta això per a la majoria de pantalles d'ordinador */
-    }
-    #timer { gap: 30px; }
-    #timer .time-block { padding: 15px; min-width: 85px; }
-    #timer .time-block span { font-size: 3rem; }
-}
-
-/* --- 5. PANTALLES MOLT GRANS (Més de 1440px) --- */
-@media (min-width: 1601px) and (max-width: 1700px) {
-    body { background-image: url('fons-web-ordinador.png'); }
-    #countdown-container { 
-        top: 76%; /* <-- Ajusta això per a monitors grans si fas zoom fora */
-    }
-    #timer { gap: 40px; }
-    #timer .time-block { padding: 20px; min-width: 95px; }
-    #timer .time-block span { font-size: 3rem; }
-}
-
-
-@media (min-width: 1701px) {
-    body { background-image: url('fons-web-ordinador.png'); }
-    #countdown-container { 
-        top: 77%; /* <-- Ajusta això per a monitors grans si fas zoom fora */
-    }
-    #timer { gap: 40px; }
-    #timer .time-block { padding: 20px; min-width: 95px; }
-    #timer .time-block span { font-size: 3rem; }
-}
-
-/* =========================================================
-   CONTENIDOR DEL VÍDEO
-============================================================ */
+/* --- CONTENIDOR DEL VÍDEO --- */
 #video-container {
     position: fixed;
     top: 0;
