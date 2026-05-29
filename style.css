@@ -18,11 +18,29 @@ body {
 
 #background-layer {
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-image: url('fons-net.jpg'); 
-    background-size: cover;
-    background-position: center;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    
+    /* Fem servir el teu logo com a patró doble per fer l'efecte intercalat */
+    background-image: 
+        url('logo_sosaina.png'), 
+        url('logo_sosaina.png');
+        
+    /* Definim la mida del logo de fons (molt gran perquè quedi com a la imatge original) */
+    background-size: 800px; 
+    
+    /* Desplacem el segon fons a la meitat exacta per crear l'efecte de graella intercalada */
+    background-position: 
+        0 0, 
+        400px 400px; /* Aquest valor ha de ser la meitat del background-size */
+        
+    background-repeat: repeat;
+    
+    /* Baixem l'opacitat al mínim perquè sigui una marca d'aigua molt subtil */
+    opacity: 0.04; /* Pots pujar-ho a 0.06 o 0.08 si ho vols més marcat */
+    
     z-index: -1;
 }
 
@@ -109,25 +127,7 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* --- CONTENIDOR DEL VÍDEO --- */
-#video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #000; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
 
-#myVideo {
-    width: 100%;
-    max-width: 1000px;
-    max-height: 90vh;
-}
 
 
 
@@ -151,7 +151,7 @@ h1 {
 /* --- MÒBILS (Fins a 768px) --- */
 @media (max-width: 768px) {
     #main-content {
-        margin-top: 5vh; /* Ajustem l'alçada d'inici per a mòbils */
+        margin-top: 1vh; /* Ajustem l'alçada d'inici per a mòbils */
         padding: 10px;
     }
     

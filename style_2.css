@@ -152,25 +152,3 @@ body {
     #timer .time-block { padding: 20px; min-width: 95px; }
     #timer .time-block span { font-size: 3rem; }
 }
-
-/* =========================================================
-   CONTENIDOR DEL VÍDEO
-============================================================ */
-#video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #000; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-#myVideo {
-    width: 100%;
-    max-width: 1000px;
-    max-height: 90vh;
-}
