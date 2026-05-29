@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-family: 'Playfair Display', serif; 
     text-align: center;
     color: #1a1a1a; 
@@ -33,6 +33,7 @@ body {
     width: 95%;
     max-width: 1600px; /* Ampliat dràsticament per permetre créixer */
     padding: 20px;
+    margin-top: 3vh;
     z-index: 1;
 }
 
@@ -45,72 +46,66 @@ body {
 
 /* --- TEXTOS --- */
 h2 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem); 
-    font-weight: 500; /* Una mica més gruixut que abans */
-    letter-spacing: 0.5px;
-    margin-bottom: 5px; 
+    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Reduït per donar protagonisme al títol */
+    font-weight: normal;
+    margin-bottom: -10px; 
 }
 
 h1 {
-    font-size: clamp(3.5rem, 8vw, 7.5rem); 
-    font-weight: 600; /* Força més negreta */
-    color: #bfa054; /* Un pèl més clar per imitar el reflex de la llum */
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-    
-    /* EL TRUC: Estirem la lletra horitzontalment un 15% */
-    transform: scaleX(1.15); 
-    display: inline-block; /* Obligatori perquè el transform funcioni en textos */
-    
-    /* Ombra doble per simular l'efecte 3D / relleu metàl·lic */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2), -1px -1px 2px rgba(255,255,255,0.4); 
+    font-size: clamp(3.5rem, 8vw, 6.5rem); 
+    font-weight: normal; 
+    color: #a98b4f; 
+    letter-spacing: 2px;
+    margin-bottom: 0px; /* Més aire a sota */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
 .subtitle {
-    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-    font-weight: 400; /* Aquest el mantenim normal */
-    margin-bottom: 40px; 
+    margin-top: 0px;
+    margin-bottom: 0px; /* Força més espai buit abans del rellotge */
 }
 
 .footer-text {
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    font-weight: 500; /* Una mica de força */
-    margin-top: 40px;
-    color: #bfa054; 
+    margin-top: 0px; /* Més aire a dalt, allunyant-lo de les capses */
+    color: #8c713b; /* Daurat un pèl més fosc per llegir-se bé sobre el fons */
     letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
 }
-
 /* --- COMPTADOR --- */
 #timer {
     display: flex;
     justify-content: center;
-    gap: clamp(15px, 4vw, 40px); /* Més separació si hi ha espai */
-    margin: 10px 0;
+    gap: clamp(10px, 3vw, 25px); /* Ajustem una miqueta l'espai entre elles */
+    margin: 30px 0;
 }
 
 #timer .time-block {
-    background: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(5px); 
-    padding: clamp(15px, 3vw, 35px) clamp(15px, 3vw, 30px); /* Capses amb més presència */
-    border-radius: 12px;
-    min-width: clamp(80px, 12vw, 150px); /* Permetem que les capses siguin amples */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(8px); 
+    
+    /* Reduïm dràsticament el padding vertical (primer valor) per fer-les més baixetes i quadrades */
+    padding: clamp(10px, 1.5vw, 15px) clamp(10px, 2vw, 20px); 
+    
+    border-radius: 8px; 
+    min-width: clamp(70px, 8vw, 95px); /* Les fem una mica més estretes en general */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255, 255, 255, 0.15); 
 }
 
 #timer .time-block span {
     font-weight: bold;
-    font-size: clamp(3rem, 7vw, 6rem); /* Números imponents */
+    /* Reduïm bastant la mida dels números */
+    font-size: clamp(2rem, 4vw, 3.5rem); 
     display: block;
     line-height: 1; 
 }
 
 #timer .time-block p {
     font-family: Arial, Helvetica, sans-serif; 
-    font-size: clamp(0.75rem, 1.5vw, 1rem); /* Text de sota en proporció */
+    /* Reduïm també el text de "DIES", "HORES" perquè quedi proporcionat */
+    font-size: clamp(0.55rem, 1vw, 0.7rem); 
     text-transform: uppercase;
-    color: #a98b4f; 
-    margin-top: 15px;
+    color: #8c713b; 
+    margin-top: 8px; /* Juntem una mica més el text amb el número */
     letter-spacing: 2px;
 }
 
@@ -132,4 +127,55 @@ h1 {
     width: 100%;
     max-width: 1000px;
     max-height: 90vh;
+}
+
+
+
+
+
+
+/* =========================================================
+   AJUSTOS RESPONSIVE (Mòbils i Tauletes)
+============================================================ */
+
+/* --- TAULETES (Fins a 1024px) --- */
+@media (max-width: 1024px) {
+    #main-content {
+        width: 100%;
+    }
+    h1 {
+        letter-spacing: 1px; /* Evita que el text es trenqui en dues línies */
+    }
+}
+
+/* --- MÒBILS (Fins a 768px) --- */
+@media (max-width: 768px) {
+    #main-content {
+        margin-top: 5vh; /* Ajustem l'alçada d'inici per a mòbils */
+        padding: 10px;
+    }
+    
+    #logo-sosaina {
+        margin-bottom: 20px; /* Menys espai sota el logo */
+    }
+
+    .subtitle {
+        margin-bottom: 40px; /* Reduïm dràsticament l'espai abans del rellotge en mòbil */
+    }
+
+    #timer {
+        margin: 20px 0;
+        gap: 8px; /* Reduïm l'espai entre capses */
+        /* Si la pantalla és extremadament estreta, permetem que les capses baixin de línia */
+        flex-wrap: wrap; 
+    }
+
+    #timer .time-block {
+        min-width: 65px;
+        padding: 10px;
+    }
+
+    .footer-text {
+        margin-top: 30px; /* Acostem el text inferior al rellotge */
+    }
 }
