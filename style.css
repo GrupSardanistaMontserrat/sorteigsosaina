@@ -179,3 +179,34 @@ h1 {
         margin-top: 30px; /* Acostem el text inferior al rellotge */
     }
 }
+
+
+
+
+
+
+/* =========================================================
+   CONTENIDOR DEL VÍDEO
+============================================================ */
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000; 
+    /* El JavaScript canviarà el display a 'flex', i aquestes línies el centraran */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#myVideo {
+    width: 90vw; /* Que ocupi pràcticament tota l'amplada */
+    max-width: 1400px; /* Límit per a pantalles d'ordinador immenses */
+    aspect-ratio: 16 / 9; /* Manté la proporció panoràmica de YouTube */
+    max-height: 90vh; /* Evita que toqui les vores superior i inferior */
+    border: none; 
+    outline: none; 
+    box-shadow: 0 10px 50px rgba(0,0,0,0.8); /* Ombra fosca per donar profunditat */
+}
