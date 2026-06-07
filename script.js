@@ -24,8 +24,8 @@ const countdown = setInterval(() => {
         
         // Amaguem el contingut principal i el patró de fons
         document.getElementById("main-content").style.display = "none";
-        document.getElementById("background-layer").style.display = "none";
-        document.body.style.backgroundColor = "#000"; // Fons totalment negre
+        //document.getElementById("background-layer").style.display = "none";
+        //document.body.style.backgroundColor = "#000"; // Fons totalment negre
         
         // Mostrem el vídeo i li donem el display flex perquè se centri
         const videoCont = document.getElementById("video-container");
