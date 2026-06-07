@@ -1,4 +1,4 @@
-// La data final: 7 de juny de 2026 a les 18:00:00
+// La data final exacta: 7 de juny de 2026 a les 18:00:00
 const targetDate = new Date("June 7, 2026 18:00:00").getTime();
 
 const countdown = setInterval(() => {
@@ -10,7 +10,7 @@ const countdown = setInterval(() => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Actualitzem l'HTML només si encara no hem arribat a 0 (afegim el 0 davant si és < 10)
+    // Actualitzem l'HTML afegint un "0" davant si el número és inferior a 10
     if (distance >= 0) {
         document.getElementById("days").innerText = days < 10 ? "0" + days : days;
         document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
@@ -22,19 +22,15 @@ const countdown = setInterval(() => {
     if (distance <= 0) {
         clearInterval(countdown); // Aturem el rellotge
         
-        // Amaguem el contingut principal i el patró de fons
+        // 1. Amaguem només el bloc del compte enrere
         document.getElementById("main-content").style.display = "none";
-        //document.getElementById("background-layer").style.display = "none";
-        //document.body.style.backgroundColor = "#000"; // Fons totalment negre
         
-        // Mostrem el vídeo i li donem el display flex perquè se centri
+        // 2. Mostrem el contenidor amb el logo apilat i el vídeo
         const videoCont = document.getElementById("video-container");
         videoCont.style.display = "flex";
         
-        // Iniciem la reproducció (amb prevenció d'errors si el navegador ho bloqueja)
+        // 3. Injectem la teva URL de YouTube afegint l'ordre de reproducció automàtica
         const video = document.getElementById("myVideo");
-        video.play().catch(error => {
-            console.log("El navegador ha bloquejat l'autoreproducció. L'usuari haurà de donar-li al Play.");
-        });
+        video.src = "https://www.youtube.com/embed/Bd8belPDW8Y?autoplay=1";
     }
 }, 1000);
