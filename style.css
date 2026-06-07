@@ -127,13 +127,6 @@ h1 {
     letter-spacing: 2px;
 }
 
-
-
-
-
-
-
-
 /* =========================================================
    AJUSTOS RESPONSIVE (Mòbils i Tauletes)
 ============================================================ */
@@ -180,33 +173,54 @@ h1 {
     }
 }
 
-
-
-
-
-
 /* =========================================================
-   CONTENIDOR DEL VÍDEO
+   CONTENIDOR DEL VÍDEO I OVERLAY (Ajustat en columna)
 ============================================================ */
 #video-container {
-    position: fixed;
+    position: absolute; /* <-- CANVI CLAU: permet que la pàgina faci scroll */
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh; /* <-- CANVI CLAU: Mínim la pantalla, però pot créixer */
+    height: auto;      /* <-- CANVI CLAU: L'alçada s'adapta automàticament */
     background: transparent; 
-    /* El JavaScript canviarà el display a 'flex', i aquestes línies el centraran */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    padding-top: 20px; /* Un petit marge perquè el logo no toqui el sostre en girar */
+    padding-bottom: 20px;
+}
+
+/* Nou bloc per al logo flotant */
+#video-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2vh; 
+    width: 100%;
+    text-align: center;
+    pointer-events: none; /* Vital: permet fer clic al vídeo a través del text */
+}
+
+#video-overlay img {
+    width: clamp(100px, 10vw, 150px); 
+    margin-bottom: -10px; 
+}
+
+#video-overlay h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem); 
+    margin-bottom: 0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
 #myVideo {
-    width: 90vw; /* Que ocupi pràcticament tota l'amplada */
-    max-width: 1400px; /* Límit per a pantalles d'ordinador immenses */
-    aspect-ratio: 16 / 9; /* Manté la proporció panoràmica de YouTube */
-    max-height: 90vh; /* Evita que toqui les vores superior i inferior */
+    width: 90vw; 
+    max-width: 1400px; 
+    aspect-ratio: 16 / 9; 
+    /* Reduït de 90vh a 70vh perquè càpiguen tant el vídeo com el logo */
+    max-height: 70vh; 
     border: none; 
     outline: none; 
-    box-shadow: 0 10px 50px rgba(0,0,0,0.8); /* Ombra fosca per donar profunditat */
+    box-shadow: 0 10px 50px rgba(0,0,0,0.8); 
 }
