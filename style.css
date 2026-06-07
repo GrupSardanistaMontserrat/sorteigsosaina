@@ -194,7 +194,7 @@ h1 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #000; 
+    background: transparent; 
     /* El JavaScript canviarà el display a 'flex', i aquestes línies el centraran */
     justify-content: center;
     align-items: center;
