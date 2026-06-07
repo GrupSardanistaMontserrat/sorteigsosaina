@@ -8,14 +8,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=4">
+    <!-- Afegim ?v=6 per forçar que es refresqui la memòria cau al servidor -->
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
+    <!-- FONS AMB LOGOS MARCA D'AIGUA -->
     <div id="background-layer"></div>
 
+    <!-- CONTINGUT PRINCIPAL (EL COMPTE ENRERE) -->
     <main id="main-content">
         <img src="logo_sosaina.png" alt="Logo Sosaina" id="logo-sosaina">
 
@@ -32,9 +35,18 @@
 
         <h2 class="footer-text">7 de juny de 2026. 18h. No t'oblidis!</h2>
     </main>
-    
+
+    <!-- CONTENIDOR DEL VÍDEO (AMAGAT FINS A LES 18H) -->
     <div id="video-container" style="display: none;">
-        <iframe id="myVideo" src="https://www.youtube.com/embed/Bd8belPDW8Y?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <!-- NOU: Logo i títol que quedaran apilats just a sobre del vídeo -->
+        <div id="video-overlay">
+            <img src="logo_sosaina.png" alt="Logo Sosaina">
+            <h1>50è ANIVERSARI</h1>
+        </div>
+
+        <!-- REPRODUCTOR DE YOUTUBE -->
+        <iframe id="myVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
     <script src="script.js"></script>
