@@ -31,6 +31,6 @@ const countdown = setInterval(() => {
         
         // 3. Injectem la teva URL de YouTube afegint l'ordre de reproducció automàtica
         const video = document.getElementById("myVideo");
-        video.src = "https://youtu.be/ssPytwaOEdQ?is=M70Lmd1tsEg4nUIK";
+        video.src = "https://youtube.com/watch?v=ssPytwaOEdQ&is=eAlRlSMyOi3qqWlR";
     }
 }, 1000);
